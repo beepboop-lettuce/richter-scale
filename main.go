@@ -18,24 +18,24 @@ func main() {
 		return
 	}
 
-	switch m; {
-	case m >= 10:
+	switch r := m; {
+	case r >= 10:
 		fmt.Printf("%.2f is massive", m)
-	case m >= 8:
+	case r >= 8:
 		fmt.Printf("%.2f is great", m)
-	case m >= 7:
+	case r >= 7:
 		fmt.Printf("%.2f is major", m)
-	case m >= 6:
+	case r >= 6:
 		fmt.Printf("%.2f is strong", m)
-	case m >= 5:
+	case r >= 5:
 		fmt.Printf("%.2f is moderate", m)
-	case m >= 4:
+	case r >= 4:
 		fmt.Printf("%.2f is light", m)
-	case m >= 3:
+	case r >= 3:
 		fmt.Printf("%.2f is minor", m)
-	case m >= 2:
+	case r >= 2:
 		fmt.Printf("%.2f is very minor", m)
-	case m >= 0:
+	case r >= 0:
 		fmt.Printf("%.2f is micro", m)
 	}
 }
