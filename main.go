@@ -9,11 +9,16 @@ import (
 func main() {
 	if len(os.Args) != 2 {
 		fmt.Println("Give me the magnitude of the earthquake.")
+		return
+	}
+	userInput := os.Args[1]
+	m, err := strconv.ParseFloat(userInput, 64)
+	if err != nil {
+		fmt.Println("I couldn't get that, sorry.")
+		return
 	}
 
-	userInput := os.Args[1]
-
-	switch m, _ := strconv.ParseFloat(userInput, 64); {
+	switch m; {
 	case m >= 10:
 		fmt.Printf("%.2f is massive", m)
 	case m >= 8:
@@ -30,9 +35,7 @@ func main() {
 		fmt.Printf("%.2f is minor", m)
 	case m >= 2:
 		fmt.Printf("%.2f is very minor", m)
-	case m < 2:
+	case m >= 0:
 		fmt.Printf("%.2f is micro", m)
-	default:
-		fmt.Println("I couldn't get that, sorry.")
 	}
 }
